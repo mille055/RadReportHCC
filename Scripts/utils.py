@@ -103,36 +103,7 @@ def find_lesion_keyword(list, keywords):
 
 def Process_frame(data):
     df1=data.copy()
-    benign_list = ['cyst', 'adenoma', 'Adenoma', 'adenomas', 'abscess','Abscess', 'hemangioma', 'Hemangioma', 'hematoma','Hematoma','fluid collection', 'lipoma','AML', 'angiomyolipoma', 'hamartoma', 'regenerative', 'focal nodular hyperplasia', 'focal fat', 'fatty infiltration','perfusion', 'fatty sparing', 'focal fat sparing', 'focal confluent fibrosis', 'FNH', 'scar', 'LIRADS 2', 'LIRADS 1', 'LR 1', 'LR 2']
-    indeterminate_list = ['LIRADS 3','LR 3', 'indeterminate', 'indeterminant', 'too small to characterize', 'versus', 'differential', 'tumor', 'dysplastic']
-    malignant_list = ['cancer', 'carcinoma', 'HCC', 'hcc', 'cholangiocarcinoma', 'metastasis', 'metastatic', 'metastases', 'LIRADS 4', 'LIRADS 5', 'LIRADS M', 'LIRADS TIV', 'tumor in vein']
-    primary_list = ['breast', 'lung', 'prostate', 'pancreatic', 'renal cell', 'RCC', 'Neuroendocrine', 'neuroendocrine', 'Carcinoid', 'carcinoid', 'lymphoma']
-    treatment_list = ['treated', 'Treated', 'TREATED', 'LR-TR', 'LR-TR Non-viable', 'Non-viable', 'Nonviable', 'Viable', 'viable', 'LR-TR Viable', 'LR-TR Equivocal', 'LR-TR equivocal', 'ablation','Ablation', 'cavity', 'resection','Resection', 'hepatectomy', 'embolization', 'Y-90', 'chemo-embolization', 'external beam', 'radiation', 'EBR', 'XRT', 'segmentectomy', 'Segmentectomy']
-    relevant_list = ['hepatic','Hepatic', 'liver','Liver', 'hepato','Hepato', 'Couinad', 'caudate', 'HCC']
-    negation_terms = ['Negative', 'negative', 'No evidence', 'no evidence', 'No metastases', 'No definite', 'no definite']
-    column_to_check = 'RawReport'
-    column_to_check2 = 'Impression'
-    parsed_column = 'Parsed'
-    
-    relevant_column = 'Relevant Sentences'
-    benign_column = 'Benign Sentences'
-    benign_keys_column = 'Benign Diagnoses'
-    indeterminate_column = 'Indeterminate Sentences'
-    indeterminate_keys_column = 'Indeterminate terms'
-    malignant_column = 'Malignant Sentences'
-    malignant_keys_column = 'Malignant Diagnoses'
-    treatment_column = 'Treatment Sentences'
-    treatment_keys_column = 'Treatment Terms'
-    corrected_malignant_negation = 'Negation Malignant Sentences'
-    corrected_malignant_remainder = 'Corrected Malignant Sentences'
-    corrected_malignant_keys_column = 'Corrected Malignant Diagnoses'
-    
-    benign_bool_column = 'Benign'
-    malignant_bool_column = 'Malignant'
-    indeterminate_bool_column = 'Indeterminate'
-    
-    treatment_bool_column = 'Treatment'
-    corrected_malignant_bool_column = 'Corrected Malignant'
+   
     
     df1[parsed_column] = df1.apply(lambda row: nltk.sent_tokenize(row[column_to_check]), axis=1)
     
