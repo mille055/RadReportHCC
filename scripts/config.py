@@ -3,7 +3,7 @@
 
 file_name = '../Data/Book1_CMM.xlsx'
 
-column_suffixes = ("rules": "rules_", "model": "model_")
+column_suffixes = {"rules": "rules_", "model": "model_"}
 
 benign_list = ['cyst', 'adenoma', 'adenomas', 'abscess', 'hemangioma', 'hematoma','fluid collection', 'lipoma','AML', 'angiomyolipoma', 'hamartoma', 'regenerative', 'focal nodular hyperplasia', 'focal fat', 'fatty infiltration','perfusion', 'fatty sparing', 'focal fat sparing', 'focal confluent fibrosis', 'FNH', 'scar', 'LIRADS 2', 'LIRADS 1', 'LR 1', 'LR 2']
 indeterminate_list = ['lirads 3','lr 3', 'indeterminate', 'indeterminant', 'too small to characterize', 'versus', 'differential', 'tumor', 'dysplastic']
