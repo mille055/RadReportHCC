@@ -103,7 +103,7 @@ def find_lesion_keyword(list, keywords):
 
 def Process_frame(data):
     df1=data.copy()
-   
+    df1 = df1.fillna(0)
     
     df1[parsed_column] = df1.apply(lambda row: nltk.sent_tokenize(row[column_to_check]), axis=1)
     
